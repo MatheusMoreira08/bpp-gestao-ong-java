@@ -1,45 +1,116 @@
-# Projeto Gestão ONG - Fábrica de Software (BPP)
+# Projeto BPP - Artefatos Java 21
 
-[cite_start]Este repositório contém o desenvolvimento de artefatos independentes em **Java 21**, desenvolvidos para a disciplina de **Boas Práticas de Programação e Padrões de Projeto** (Curso: ESW - 2026/1)[cite: 52, 74].
+Projeto desenvolvido para a disciplina **Boas Práticas de Programação e Padrões de Projeto**, ministrada pelo professor **Gercino Sátiro Pedro Filho**, no curso de **Engenharia de Software (ESW)**.
 
-## 🎯 Objetivo do Projeto
-[cite_start]O objetivo principal é o desenvolvimento de 7 artefatos independentes para auxiliar pequenos empresários e ONGs que não possuem recursos para softwares complexos[cite: 2, 24]. [cite_start]O projeto prioriza a **independência de classes (baixo acoplamento)** e a não utilização de frameworks ou bancos de dados, seguindo uma abordagem de programação nativa[cite: 3].
-
-## 🛠️ Restrições e Boas Práticas
-[cite_start]Seguindo a proposta pedagógica de "Estudo de Caso" e aprendizado nativo, o projeto adota as seguintes diretrizes[cite: 58, 61]:
-* [cite_start]**Linguagem:** Java 21[cite: 17, 91].
-* [cite_start]**Ambiente:** Uso exclusivo de editores de texto básicos, sem o auxílio de IDEs ou Frameworks nesta fase[cite: 16, 59].
-* [cite_start]**Persistência:** Uso de arquivos planos (`.txt` e `.csv`) em substituição a bancos de dados relacionais[cite: 18].
-* [cite_start]**Compilação:** O código deve ser compilado via comando `javac` e executado via terminal (CMD/Shell)[cite: 19, 73].
-
-## 📋 Requisitos Funcionais (Artefatos)
-[cite_start]O sistema "Gestão ONG" contempla as seguintes funcionalidades[cite: 4, 25]:
-1.  [cite_start]**RF01 - Autenticação Estática:** Validação de usuário e senha (mínimo de um caractere especial)[cite: 5, 6].
-2.  [cite_start]**RF02 - Validação de CPF:** Classe para validar integridade do CPF, ignorando caracteres não numéricos[cite: 7].
-3.  [cite_start]**RF03 - Validação de CNPJ:** Classe isolada para validação de registros de pessoa jurídica[cite: 8].
-4.  [cite_start]**RF04 - Gestão de E-mail:** Validação de formato padrão e paridade entre dois campos de entrada[cite: 9].
-5.  [cite_start]**RF05 - Cadastro de Clientes:** Captura de Nome, CPF e E-mail com persistência em `clientes.txt`[cite: 10].
-6.  [cite_start]**RF06 - Tratamento de Duplicidade:** Impedir CPFs idênticos no arquivo e filtrar duplicatas na exibição[cite: 11].
-7.  [cite_start]**RF07 - Leitura de Dados CSV:** Processamento e exibição do conteúdo do arquivo `estados.csv`[cite: 12].
-
-## 📊 Modelagem UML
-A documentação técnica inclui:
-* [cite_start]**Diagrama de Caso de Uso:** Interações do Funcionário com as funcionalidades de Login, Validação e Cadastro[cite: 21, 22].
-* [cite_start]**Diagrama de Classe:** Estrutura de classes independentes para garantir o reuso isolado de cada artefato[cite: 34, 35].
-
-## 🚀 Instruções de Execução
-Como o projeto exige compilação nativa, utilize os seguintes comandos no terminal:
-
-1.  **Compilação:**
-    ```bash
-    javac NomeDaClasse.java
-    ```
-2.  **Execução:**
-    ```bash
-    java NomeDaClasse
-    ```
+O objetivo do projeto é desenvolver **classes independentes em Java 21** que auxiliem pequenos empresários em tarefas básicas de validação e cadastro de dados, utilizando **apenas recursos nativos da linguagem**, sem frameworks ou bancos de dados.  
 
 ---
-**Curso:** Engenharia de Software (ESW) - 2026/1  
-**Professor:** Gercino Satiro Pedro Filho  
-[cite_start]**Data de Entrega (Fase 1):** 11/03/2026
+
+# Objetivo do Projeto
+
+Desenvolver **7 artefatos independentes em Java 21**, priorizando:
+
+- Baixo acoplamento entre classes
+- Código simples e reutilizável
+- Uso de **arquivos planos (.txt e .csv)** para persistência de dados
+- Compilação e execução via **terminal**
+- Desenvolvimento em **editor de texto simples** (sem IDE)
+
+A proposta busca reforçar o entendimento do funcionamento da linguagem Java e da compilação manual de programas.  
+
+---
+
+# Requisitos Funcionais
+
+O sistema é composto pelos seguintes artefatos:
+
+### RF01 - Autenticação Estática
+Classe responsável por validar um **usuário e senha pré-definidos no código**.
+
+Regras:
+- A senha deve conter **pelo menos um caractere especial**.
+
+---
+
+### RF02 - Validação de CPF
+Classe responsável por validar um **CPF**.
+
+Características:
+- Ignora caracteres não numéricos
+- Realiza o cálculo dos **dígitos verificadores**
+
+---
+
+### RF03 - Validação de CNPJ
+Classe independente para validação de **CNPJ**.
+
+Características:
+- Validação da estrutura
+- Cálculo dos dígitos verificadores
+
+---
+
+### RF04 - Validação de E-mail
+Classe responsável por:
+
+- Validar o **formato padrão de e-mail**
+- Verificar a **confirmação entre dois campos de e-mail**
+
+---
+
+### RF05 - Cadastro de Clientes
+Responsável por registrar clientes contendo:
+
+- Nome
+- CPF
+- E-mail
+
+Os dados são persistidos no arquivo:
+
+---
+
+### RF06 - Tratamento de Duplicidade
+Implementa uma lógica para:
+
+- Impedir que **CPFs duplicados** sejam gravados
+- Filtrar registros duplicados na exibição de dados
+
+---
+
+### RF07 - Leitura de Arquivo CSV
+Classe responsável por ler e exibir os dados do arquivo:
+
+
+Conteúdo do CSV:
+
+- Código do estado
+- Sigla do estado
+
+Essa leitura **não possui vínculo direto com o cadastro de clientes**.
+
+---
+
+# Requisitos Não Funcionais
+
+O projeto segue as seguintes regras técnicas:
+
+- Linguagem: **Java 21**
+- Ambiente: **Editor de texto simples**
+- Persistência: **Arquivos TXT e CSV**
+- Banco de Dados: **Não utilizado**
+- Frameworks: **Não utilizados**
+- Compilação: **javac**
+- Execução: **linha de comando (CMD ou Shell)**
+
+---
+
+# Compilação
+
+Para compilar o projeto:
+
+```bash
+javac *.java
+
+java NomeDaClasse
+
+java CadastroCliente
