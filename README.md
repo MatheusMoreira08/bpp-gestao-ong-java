@@ -1,116 +1,49 @@
-# Projeto BPP - Artefatos Java 21
+🚀 Projeto
+Este repositório contém o desenvolvimento de 7 artefatos independentes em Java 21, projetados para oferecer soluções de automação e validação para pequenos empreendedores. O projeto segue os princípios de Alta Coesão e Baixo Acoplamento, garantindo que cada classe funcione como um módulo autônomo.
 
-Projeto desenvolvido para a disciplina **Boas Práticas de Programação e Padrões de Projeto**, ministrada pelo professor **Gercino Sátiro Pedro Filho**, no curso de **Engenharia de Software (ESW)**.
+👥 Equipe de Desenvolvimento
+Antonio Randolfo B Neto - RA: 145287-2023
+Lucas Ulisses Clementino de Arruda e Silva - RA: 179124-2024
+Matheus Guilherme Moreira de Oliveira - RA: 183958-2024
+João Miguel de Oliveira Teodosio - RA: 167122-2024
+Thiago Cezario da Silva - RA: 168574-2024
 
-O objetivo do projeto é desenvolver **classes independentes em Java 21** que auxiliem pequenos empresários em tarefas básicas de validação e cadastro de dados, utilizando **apenas recursos nativos da linguagem**, sem frameworks ou bancos de dados.  
+📋 Objetivo
+Desenvolver componentes de software nativos, sem o auxílio de frameworks ou bancos de dados, utilizando apenas recursos básicos da linguagem Java para garantir portabilidade e baixo custo de execução.
 
----
+🛠️ Requisitos Funcionais (Artefatos)
+Autenticador Estático: Validação de login e senha com exigência de caracteres especiais.
 
-# Objetivo do Projeto
+Validador de CPF: Algoritmo de verificação de integridade, tratando exclusivamente a cadeia numérica.
 
-Desenvolver **7 artefatos independentes em Java 21**, priorizando:
+Validador de CNPJ: Motor isolado para validação de registros de pessoa jurídica.
 
-- Baixo acoplamento entre classes
-- Código simples e reutilizável
-- Uso de **arquivos planos (.txt e .csv)** para persistência de dados
-- Compilação e execução via **terminal**
-- Desenvolvimento em **editor de texto simples** (sem IDE)
+Gestão de E-mail: Verificação de formato padrão e rotina de confirmação de paridade entre campos.
 
-A proposta busca reforçar o entendimento do funcionamento da linguagem Java e da compilação manual de programas.  
+Cadastro de Clientes: Fluxo de captura de dados (Nome, CPF, E-mail) com persistência em arquivos .txt.
 
----
+Tratamento de Duplicidade: Lógica integrada para impedir registros duplicados de CPF no armazenamento.
 
-# Requisitos Funcionais
+Leitor de Dados CSV: Processamento e exibição de informações geográficas a partir de arquivos .csv.
 
-O sistema é composto pelos seguintes artefatos:
+🏗️ Modelagem UML
+Diagrama de Caso de Uso
+Demonstra as interações do usuário administrativo com os módulos do sistema.
 
-### RF01 - Autenticação Estática
-Classe responsável por validar um **usuário e senha pré-definidos no código**.
+Diagrama de Classe
+Apresenta a estrutura desacoplada dos artefatos, onde cada classe representa uma unidade de software autônoma.
 
-Regras:
-- A senha deve conter **pelo menos um caractere especial**.
+💻 Tecnologias e Boas Práticas
+Linguagem: Java 21.
 
----
+Ambiente: Desenvolvimento nativo em editores de texto simples (estilo Notepad).
 
-### RF02 - Validação de CPF
-Classe responsável por validar um **CPF**.
+Persistência: Uso de arquivos planos (.txt e .csv).
 
-Características:
-- Ignora caracteres não numéricos
-- Realiza o cálculo dos **dígitos verificadores**
+Compilação: Via terminal utilizando o comando javac.
 
----
+Disciplina: Boas Práticas de Programação e Padrões de Projeto
 
-### RF03 - Validação de CNPJ
-Classe independente para validação de **CNPJ**.
+Professor: Gercino Sátiro Pedro Filho
 
-Características:
-- Validação da estrutura
-- Cálculo dos dígitos verificadores
-
----
-
-### RF04 - Validação de E-mail
-Classe responsável por:
-
-- Validar o **formato padrão de e-mail**
-- Verificar a **confirmação entre dois campos de e-mail**
-
----
-
-### RF05 - Cadastro de Clientes
-Responsável por registrar clientes contendo:
-
-- Nome
-- CPF
-- E-mail
-
-Os dados são persistidos no arquivo:
-
----
-
-### RF06 - Tratamento de Duplicidade
-Implementa uma lógica para:
-
-- Impedir que **CPFs duplicados** sejam gravados
-- Filtrar registros duplicados na exibição de dados
-
----
-
-### RF07 - Leitura de Arquivo CSV
-Classe responsável por ler e exibir os dados do arquivo:
-
-
-Conteúdo do CSV:
-
-- Código do estado
-- Sigla do estado
-
-Essa leitura **não possui vínculo direto com o cadastro de clientes**.
-
----
-
-# Requisitos Não Funcionais
-
-O projeto segue as seguintes regras técnicas:
-
-- Linguagem: **Java 21**
-- Ambiente: **Editor de texto simples**
-- Persistência: **Arquivos TXT e CSV**
-- Banco de Dados: **Não utilizado**
-- Frameworks: **Não utilizados**
-- Compilação: **javac**
-- Execução: **linha de comando (CMD ou Shell)**
-
----
-
-# Compilação
-
-Para compilar o projeto:
-
-```bash
-javac *.java
-
-java NomeDaClasse
-
-java CadastroCliente
+Curso: ESW - 2026/1
