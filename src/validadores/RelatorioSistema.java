@@ -24,10 +24,8 @@ public class RelatorioSistema {
 
             while ((linha = leitor.readLine()) != null) {
 
-                // separa os dados do CSV
                 String[] dados = linha.split(";");
 
-                // exibe os dados encontrados
                 for (int i = 0; i < dados.length; i++) {
                     System.out.print(dados[i]);
 
