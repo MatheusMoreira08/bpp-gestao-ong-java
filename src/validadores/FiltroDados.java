@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class FiltroDados {
     private final String ARQUIVO = "clientes.txt";
@@ -29,5 +30,22 @@ public class FiltroDados {
         }
         
         return false; 
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        FiltroDados filtro = new FiltroDados();
+
+        System.out.println("--- TESTE: FILTRO DE DUPLICIDADE ---");
+        System.out.print("Digite o CPF para verificar se ja esta no arquivo: ");
+        String cpf = sc.nextLine();
+
+        if (filtro.verificarDuplicidade(cpf)) {
+            System.out.println("RESULTADO: O CPF " + cpf + " ja esta cadastrado (BLOQUEADO)!");
+        } else {
+            System.out.println("RESULTADO: O CPF " + cpf + " nao foi encontrado (LIBERADO).");
+        }
+
+        sc.close();
     }
 }
